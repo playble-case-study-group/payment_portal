@@ -91,7 +91,8 @@
                         <li><a href="{{ route('admin.order-statuses.create') }}"><i class="fa fa-plus"></i> Create order status</a></li>
                     </ul>
                 </li>
-                <li class="header">DELIVERY</li>
+            <?php /*
+                <!-- <li class="header">DELIVERY</li>
                 <li class="treeview @if(request()->segment(2) == 'couriers') active @endif">
                     <a href="#">
                         <i class="fa fa-truck"></i> <span>Couriers</span>
@@ -103,7 +104,7 @@
                         <li><a href="{{ route('admin.couriers.index') }}"><i class="fa fa-circle-o"></i> List couriers</a></li>
                         <li><a href="{{ route('admin.couriers.create') }}"><i class="fa fa-plus"></i> Create courier</a></li>
                     </ul>
-                </li>
+                </li> */ ?>
                 <li class="header">CONFIG</li>
                 <li class="treeview @if(request()->segment(2) == 'employees') active @endif">
                     <a href="#">
@@ -140,6 +141,7 @@
                         <li><a href="{{ route('admin.countries.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
                     </ul>
                 </li>
+            <?php /*
                 <li class="treeview @if(request()->segment(2) == 'brands') active @endif">
                     <a href="#">
                         <i class="fa fa-tag"></i> <span>Brands</span>
@@ -151,7 +153,8 @@
                         <li><a href="{{ route('admin.brands.index') }}"><i class="fa fa-circle-o"></i> List brands</a></li>
                         <li><a href="{{ route('admin.brands.create') }}"><i class="fa fa-plus"></i> Create brand</a></li>
                     </ul>
-                </li>
+                </li> */ ?>
+
             @endif
         </ul>
     </section>

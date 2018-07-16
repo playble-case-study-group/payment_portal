@@ -131,6 +131,7 @@ class ProductController extends Controller
         $product = $this->productRepo->createProduct($data);
         $this->saveProductImages($request, $product);
 
+
         if ($request->has('categories')) {
             $product->categories()->sync($request->input('categories'));
         } else {

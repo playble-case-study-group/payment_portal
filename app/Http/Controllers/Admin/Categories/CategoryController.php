@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $list = $this->categoryRepo->listCategories('created_at', 'desc', 1)->whereIn('parent_id', [1]);
+        $list = $this->categoryRepo->listCategories('created_at', 'desc')->whereIn('parent_id', [1]);
 
         return view('admin.categories.list', [
             'categories' => $this->categoryRepo->paginateArrayResults($list->all())
@@ -69,6 +69,7 @@ class CategoryController extends Controller
         $category = $this->categoryRepo->findCategoryById($id);
 
         $cat = new CategoryRepository($category);
+
 
         return view('admin.categories.show', [
             'category' => $category,
