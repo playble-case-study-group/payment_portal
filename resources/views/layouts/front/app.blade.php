@@ -48,6 +48,12 @@
     @yield('og')
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js') }}"></script>
+    <!-- BYU Component Requirements -->
+    <link type="text/css" rel="stylesheet" href="//cloud.typography.com/75214/6517752/css/fonts.css" media="all" />
+    <link rel="stylesheet" href="https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.css" />
+    <script async src="https://cdn.byu.edu/byu-theme-components/latest/byu-theme-components.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--/ BYU Component Requirements -->
 </head>
 <body>
 <noscript>
@@ -56,19 +62,45 @@
         <a href="https://www.enable-javascript.com/" target="_blank">Read more</a>
     </p>
 </noscript>
+
+<div class="containing-element">
+<byu-header home-url="{{ route('home') }}">
+    <span slot="site-title">{{ config('app.name') }}</span>
+    <byu-search slot="search">
+        <!-- search form -->
+        <form action="{{route('search.product')}}" method="GET" class="form-inline" style="margin: 15px 0 0;">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search..." value="{!! request()->input('q') !!}">
+            </div>
+        </form>
+        <!-- /.search form -->
+    </byu-search>
+    <byu-user-info slot="user" login-url="/login">
+        @if(auth()->check())
+            <a slot="logout" href="/logout">Sign Out</a>
+            <span slot="user-name"><a href="{{ route('accounts') }}" class="account">My Account</a></span>
+        @else
+            <a slot="login" href="/login">Sign In</a>
+        @endif
+    </byu-user-info>
+    <byu-menu slot="nav" collapsed>
+        @foreach($categories as $category)
+            @if($category->children()->count() > 0)
+                @include('layouts.front.category-sub', ['subs' => $category->children])
+            @else
+                <a @if(request()->segment(2) == $category->slug) class="active" @endif href="{{route('front.category.slug', $category->slug)}}">{{$category->name}} </a>
+            @endif
+        @endforeach
+    </byu-menu>
+</byu-header>
+
+
 <section>
     <div class="row hidden-xs">
         <div class="container">
             <div class="clearfix"></div>
             <div class="pull-right">
                 <ul class="nav navbar-nav navbar-right">
-                    @if(auth()->check())
-                        <li><a href="{{ route('accounts') }}"><i class="fa fa-home"></i> My Account</a></li>
-                        <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                    @else
-                        <li><a href="{{ route('login') }}"> <i class="fa fa-lock"></i> Login</a></li>
-                        <li><a href="{{ route('register') }}"> <i class="fa fa-sign-in"></i> Register</a></li>
-                    @endif
                     <li id="cart" class="menubar-cart">
                         <a href="{{ route('cart.index') }}" title="View Cart" class="awemenu-icon menu-shopping-cart">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -79,6 +111,9 @@
             </div>
         </div>
     </div>
+
+
+<?php /*
     <header id="header-section">
         <nav class="navbar navbar-default">
             <div class="container">
@@ -98,6 +133,8 @@
             </div>
         </nav>
     </header>
+    */ ?>
+
 </section>
 @yield('content')
 
