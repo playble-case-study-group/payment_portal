@@ -183,6 +183,9 @@ li.menubar-cart a {
     border-radius: 10px;
 }
 
+.account:hover {
+    text-decoration: underline;
+}
 
 
 
@@ -656,4 +659,20 @@ a:hover img {
 }
 #productAttribute {
     width: 312px;
+}
+
+/******** Stick Footer **********/
+
+html, body {
+    height: 100%;
+}
+
+.containing-element {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container {
+    flex-grow: 1;
 }
