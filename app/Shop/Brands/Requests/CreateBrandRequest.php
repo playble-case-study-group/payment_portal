@@ -14,7 +14,9 @@ class CreateBrandRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'unique:brands']
+            'name' => ['required', 'unique:brands'],
+            'about' => ['required'],
+            'image' => ['required']
         ];
     }
 }

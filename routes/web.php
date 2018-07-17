@@ -54,7 +54,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.' ]
             //Route::resource('couriers', 'Couriers\CourierController');
             Route::resource('attributes', 'Attributes\AttributeController');
             Route::resource('attributes.values', 'Attributes\AttributeValueController');
-            //Route::resource('brands', 'Brands\BrandController');
+            Route::resource('brands', 'Brands\BrandController');
         });
     });
 });

@@ -12,6 +12,10 @@
                     <div class="form-group">
                         <label for="name">Name <span class="text-danger">*</span></label>
                         <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="{{ $brand->name }}">
+                        <label for="about">About <span class="text-danger">*</span></label>
+                        <input type="text" name="about" id="about" placeholder="About" class="form-control" value="{{ old('about') }}">
+                        <label for="image">Images</label>
+                        <input type="file" name="image[]" id="image" class="form-control" multiple>
                     </div>
                 </div>
                 <!-- /.box-body -->

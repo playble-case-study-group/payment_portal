@@ -141,7 +141,6 @@
                         <li><a href="{{ route('admin.countries.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
                     </ul>
                 </li>
-            <?php /*
                 <li class="treeview @if(request()->segment(2) == 'brands') active @endif">
                     <a href="#">
                         <i class="fa fa-tag"></i> <span>Brands</span>
@@ -153,7 +152,7 @@
                         <li><a href="{{ route('admin.brands.index') }}"><i class="fa fa-circle-o"></i> List brands</a></li>
                         <li><a href="{{ route('admin.brands.create') }}"><i class="fa fa-plus"></i> Create brand</a></li>
                     </ul>
-                </li> */ ?>
+                </li>
 
             @endif
         </ul>
