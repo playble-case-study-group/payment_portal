@@ -13,7 +13,7 @@
         <tbody>
         @foreach ($products as $product)
             <tr>
-                <td><a href="{{ route('admin.products.show', $product->id) }}">{{ $product->name }}</a></td>
+                <td><a href="{{ route('admin.products.edit', $product->id) }}">{{ $product->name }}</a></td>
                 <td class="text-center">
                     @if(isset($product->cover))
                         <img src="{{ asset("storage/$product->cover") }}" alt="" class="img-responsive">

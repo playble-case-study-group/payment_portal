@@ -15,11 +15,11 @@
                     <div class="card bg-light" style="width: 18rem;">
                         <img class="card-img-top" src="../images/{{ $brand->name }}.png" alt="{{ $brand->name }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $brand->name }}</h5>
+                            <h3 class="card-title">{{ $brand->name }}</h3>
                             <p class="card-text">{{ $brand->snippet }}</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <a href="simulation/{{$brand->id}}" class="btn btn-primary btn-yellow">Learn More</a>
                         </div>
                     </div>
                     @endforeach
@@ -27,8 +27,9 @@
             </div>
         </section>
 
-
+    <br>
     <div id="browse-all-btn"> <a class="btn btn-default browse-all-btn" href="{{ route('front.category.slug', 'all-products') }}" role="button">browse all items</a></div>
+    <br>
     <br>
     <br>
 @endsection

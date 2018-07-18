@@ -63,7 +63,7 @@
     <span slot="site-title">{{ config('app.name') }}</span>
     <byu-search slot="search">
         <!-- search form -->
-        <form action="{{route('search.product')}}" method="GET" class="form-inline" style="margin: 15px 0 0;">
+        <form action="{{route('search.product')}}" method="GET" class="form-inline">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search..." value="{!! request()->input('q') !!}">
             </div>
@@ -86,7 +86,7 @@
                 <a @if(request()->segment(2) == $category->slug) class="active" @endif href="{{route('front.category.slug', $category->slug)}}">{{$category->name}} </a>
             @endif
         @endforeach
-        <a href="javascript: void 0">About</a>
+        <a href="/about">About</a>
     </byu-menu>
 </byu-header>
 

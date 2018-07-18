@@ -33,7 +33,7 @@ html {
     min-height: 100%;
 }
 body {
-    font-family: 'Muli', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     line-height: 27px;
     font-color: black;
@@ -48,7 +48,7 @@ body {
     color: #d89522;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Rajdhani', serif;
     color: #222;
     font-weight: 300;
     margin-top: 0px;
@@ -127,6 +127,8 @@ ul.navbar-nav > li.active > a {
 
 
 
+
+
 /* ************************
             MENU
 ************************** */
@@ -187,6 +189,9 @@ li.menubar-cart a {
     text-decoration: underline;
 }
 
+.sidebar-menu > li {
+    width: 100%;
+}
 
 
 
@@ -310,6 +315,8 @@ li.menubar-cart a {
 .product-text h4 {
     font-size: 18px;
     margin: 20px 0 5px;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 .product-text p {
     font-size: 13px;
@@ -336,6 +343,8 @@ li.menubar-cart a {
     border-radius: 3px;
     font-family: 'Lora', serif;
 }
+
+
 
 
 /* ************************
@@ -395,6 +404,20 @@ li.menubar-cart a {
 
 .card-img-top {
     height: 200px;
+    background-color: white;
+}
+.btn-yellow {
+    background-color: #d89522;
+    border-color: #BE831E;
+}
+
+.btn-yellow:hover,
+.btn-yellow:active,
+.btn-yellow:not(:disabled):not(.disabled).active,
+.btn-yellow:not(:disabled):not(.disabled):active,
+.show>.btn-yellow.dropdown-toggle {
+    background-color: #BE831E;
+    border-color: #B17A1C;
 }
 
 
@@ -585,7 +608,7 @@ a:hover img {
 }
 
 .product-list {
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .nav.navbar-nav .dropdown {
