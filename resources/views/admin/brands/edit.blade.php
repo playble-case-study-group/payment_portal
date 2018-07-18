@@ -16,7 +16,7 @@
                         <input type="text" name="snippet" id="snipet" placeholder="Snippet" class="form-control" value="{{ $brand->snippet }}">
 
                         <label for="about">About <span class="text-danger">*</span></label>
-                        <input type="text" name="about" id="about" placeholder="About" class="form-control" value="{{ $brand->about }}">
+                        <textarea style="height: 30rem;" class="form-control" name="about" id="about" placeholder="About" class="form-control">{{ $brand->about }}</textarea>
                     </div>
                 </div>
                 <!-- /.box-body -->

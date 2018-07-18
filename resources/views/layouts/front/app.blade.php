@@ -60,7 +60,7 @@
 
 <div class="containing-element">
 <byu-header home-url="{{ route('home') }}">
-    <span slot="site-title">{{ config('app.name') }}</span>
+    <a slot="site-title"  href="{{ route('home') }}">{{ config('app.name') }}</a>
     <byu-search slot="search">
         <!-- search form -->
         <form action="{{route('search.product')}}" method="GET" class="form-inline">

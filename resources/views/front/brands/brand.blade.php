@@ -7,7 +7,7 @@
         <small>
             {{ $brand->snippet }}
         </small>
-        <p>
+        <p class="preline">
             {{ $brand->about }}
         </p>
     </div>

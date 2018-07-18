@@ -110,8 +110,9 @@ ul.navbar-nav > li.active > a {
 .section-title h2 {
     text-align: center;
     font-size: 35px;
-    line-height: 45px;
-    margin-bottom: 5px;
+    line-height: 40px;
+    margin-bottom: 60px;
+    margin-top: -30px;
 }
 .section-title p {
     text-align: center;
@@ -247,6 +248,11 @@ li.menubar-cart a {
 
 }
 
+.spacing-fix {
+    margin-top: -80px;
+    margin-bottom: 80px;
+}
+
 
 /* ************************
         PRODUCT
@@ -296,9 +302,12 @@ li.menubar-cart a {
     width: 100%;
     margin-bottom: 15px;
 }
-.single-product:hover .product-overlay {
+/*.single-product:hover .product-overlay {
     opacity: 1;
     border-radius: 3px;
+}*/
+.single-product:hover > a > .product-text h4{
+    color: #d89522;
 }
 .product-btn {
     border-radius: 3px;
@@ -418,6 +427,10 @@ li.menubar-cart a {
 .show>.btn-yellow.dropdown-toggle {
     background-color: #BE831E;
     border-color: #B17A1C;
+}
+
+.preline {
+    white-space : pre-line;
 }
 
 

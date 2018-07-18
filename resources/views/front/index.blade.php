@@ -9,7 +9,11 @@
 @section('content')
     @include('layouts.front.home-slider')
         <section class="new-product t100 home">
+            <hr class="spacing-fix">
             <div class="container">
+                <div class="section-title b50">
+                    <h2>Learn More about our Simulations</h2>
+                </div>
                 <div class="card-deck">
                     @foreach ($cat1 as $brand)
                     <div class="card bg-light" style="width: 18rem;">
