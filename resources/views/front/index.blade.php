@@ -8,26 +8,27 @@
 
 @section('content')
     @include('layouts.front.home-slider')
-
-    @if(!$cat1->products->isEmpty())
         <section class="new-product t100 home">
             <div class="container">
-                <div class="section-title b50">
-                    <h2>{{ $cat1->name }}</h2>
+                <div class="card-deck">
+                    @foreach ($cat1 as $brand)
+                    <div class="card bg-light" style="width: 18rem;">
+                        <img class="card-img-top" src="../images/{{ $brand->name }}.png" alt="{{ $brand->name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $brand->name }}</h5>
+                            <p class="card-text">{{ $brand->snippet }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
-                @include('front.products.product-list', ['products' => $cat1->products])
-                <div id="browse-all-btn"> <a class="btn btn-default browse-all-btn" href="{{ route('front.category.slug', $cat1->slug) }}" role="button">browse all items</a></div>
             </div>
         </section>
-    @endif
-    <hr>
-    @if(!$cat2->products->isEmpty())
-        <div class="container">
-            <div class="section-title b100">
-                <h2>{{ $cat2->name }}</h2>
-            </div>
-            @include('front.products.product-list', ['products' => $cat2->products])
-            <div id="browse-all-btn"> <a class="btn btn-default browse-all-btn" href="{{ route('front.category.slug', $cat2->slug) }}" role="button">browse all items</a></div>
-        </div>
-    @endif
+
+
+    <div id="browse-all-btn"> <a class="btn btn-default browse-all-btn" href="{{ route('front.category.slug', 'all-products') }}" role="button">browse all items</a></div>
+    <br>
+    <br>
 @endsection

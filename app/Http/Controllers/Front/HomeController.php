@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
+use App\Shop\Brands\Repositories\BrandRepositoryInterface;
 use App\Http\Controllers\Controller;
 use App\Shop\Products\Transformations\ProductTransformable;
 
@@ -13,15 +14,15 @@ class HomeController extends Controller
     /**
      * @var CategoryRepositoryInterface
      */
-    private $categoryRepo;
+    private $brandRepo;
 
     /**
      * HomeController constructor.
      * @param CategoryRepositoryInterface $categoryRepository
      */
-    public function __construct(CategoryRepositoryInterface $categoryRepository)
+    public function __construct(BrandRepositoryInterface $brandRepository)
     {
-        $this->categoryRepo = $categoryRepository;
+        $this->brandRepo = $brandRepository;
     }
 
     /**
@@ -29,9 +30,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cat1 = $this->categoryRepo->findCategoryById(1);
-        $cat2 = $this->categoryRepo->findCategoryById(7);
+        $cat1 = $this->brandRepo->listBrands();
 
-        return view('front.index', compact('cat1', 'cat2'));
+        return view('front.index', compact('cat1'));
     }
 }

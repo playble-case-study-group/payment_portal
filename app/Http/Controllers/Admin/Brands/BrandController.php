@@ -65,6 +65,20 @@ class BrandController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(int $id)
+    {
+        $brand = $this->brandRepo->findBrandById($id);
+        return view('admin.brands.edit', compact('brand'));
+    }
+
+
+
+    /**
      * @param UpdateBrandRequest $request
      * @param $id
      *

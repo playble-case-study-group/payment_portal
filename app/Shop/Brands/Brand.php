@@ -2,18 +2,18 @@
 
 namespace App\Shop\Brands;
 
-use App\Shop\Products\Product;
 use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
-    protected $fillable = ['name', 'image', 'about'];
+    protected $fillable = ['name', 'about', 'snippet'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function products()
+    public function brands()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Brand::class);
     }
+
 }

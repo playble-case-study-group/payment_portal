@@ -144,18 +144,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(int $id)
-    {
-        $product = $this->productRepo->findProductById($id);
-        return view('admin.products.show', compact('product'));
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
