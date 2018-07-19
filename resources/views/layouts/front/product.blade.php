@@ -29,18 +29,16 @@
         <figure class="text-center product-cover-wrap col-md-8">
             @if(isset($product->cover))
                 <img id="main-image" class="product-cover img-responsive"
-                     src="{{ asset("storage/$product->cover") }}?w=400"
-                     data-zoom="{{ asset("storage/$product->cover") }}?w=1200">
+                     src="{{ asset("storage/$product->cover") }}?w=400">
             @else
-                <img id="main-image" class="product-cover" src="https://placehold.it/300x300"
-                     data-zoom="{{ asset("storage/$product->cover") }}?w=1200" alt="{{ $product->name }}">
+                <img id="main-image" class="product-cover" src="https://placehold.it/300x300" alt="{{ $product->name }}">
             @endif
         </figure>
     </div>
     <div class="col-md-6">
         <div class="product-description">
             <h1>{{ $product->name }}
-                <small>{{ config('cart.currency') }} {{ $product->price }}</small>
+                <small>${{ $product->price }}</small>
             </h1>
             <div class="description">{!! $product->description !!}</div>
             <div class="excerpt">
@@ -85,16 +83,3 @@
         </div>
     </div>
 </div>
-@section('js')
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var productPane = document.querySelector('.product-cover');
-            var paneContainer = document.querySelector('.product-cover-wrap');
-
-            new Drift(productPane, {
-                paneContainer: paneContainer,
-                inlinePane: false
-            });
-        });
-    </script>
-@endsection

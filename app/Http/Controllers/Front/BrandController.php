@@ -6,6 +6,7 @@ use App\Shop\Brands\Brand;
 use App\Shop\Brands\Repositories\BrandRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class BrandController extends Controller
 {
@@ -62,7 +63,14 @@ class BrandController extends Controller
     public function show(int $id)
     {
         $brand = $this->brandRepo->findBrandById($id);
-        return view('front.brands.brand', compact('brand'));
+        $products = DB::table('products')
+            ->join('category_product', 'products.id','=', 'category_product.product_id')
+            ->join('categories', 'categories.id', '=', 'category_product.category_id')
+            ->select('products.slug','categories.name')
+            ->where('brand_id', $id)
+            ->where('categories.slug', '!=', 'all-products')
+            ->get();
+        return view('front.brands.brand', compact('brand', 'products'));
     }
 
     /**
