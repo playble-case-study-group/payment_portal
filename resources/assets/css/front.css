@@ -122,7 +122,13 @@ ul.navbar-nav > li.active > a {
     margin: 0;
 }
 
+.bg-grey-cart {
+    background-color: #F2F2F2;
+}
 
+.bg-green-cart {
+    background-color: #dff0d8;
+}
 
 
 
@@ -635,9 +641,9 @@ a:hover img {
     border-left: 1px solid #d8cab2;
 }
 
-.product-cover-wrap {
+/*.product-cover-wrap {
     border: 1px solid #eee;
-}
+}*/
 
 .product-description {
     position: relative;

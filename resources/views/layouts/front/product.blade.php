@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <ul id="thumbnails" class="col-md-4 list-unstyled">
             <li>
                 <a href="javascript: void(0)">

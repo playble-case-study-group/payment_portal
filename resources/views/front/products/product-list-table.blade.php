@@ -9,32 +9,32 @@
         </thead>
         <tfoot>
         <tr>
-            <td class="bg-warning">Subtotal</td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning">{{config('cart.currency')}} {{ $subtotal }}</td>
+            <td class="bg-grey-cart">Subtotal</td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart">{{config('cart.currency')}} {{ $subtotal }}</td>
         </tr>
         <tr>
-            <td class="bg-warning">Shipping</td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning">{{config('cart.currency')}} <span id="shippingFee">{{ $shippingFee }}</span></td>
+            <td class="bg-grey-cart">Shipping</td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart">{{config('cart.currency')}} <span id="shippingFee">{{ $shippingFee }}</span></td>
         </tr>
         <tr>
-            <td class="bg-warning">Tax</td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning"></td>
-            <td class="bg-warning">{{config('cart.currency')}} {{ number_format($tax, 2) }}</td>
+            <td class="bg-grey-cart">Tax</td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart"></td>
+            <td class="bg-grey-cart">{{config('cart.currency')}} {{ number_format($tax, 2) }}</td>
         </tr>
         <tr>
-            <td class="bg-success">Total</td>
-            <td class="bg-success"></td>
-            <td class="bg-success"></td>
-            <td class="bg-success"></td>
-            <td class="bg-success">{{config('cart.currency')}} <span id="total" data-total="{{ $total }}">{{ $total }}</span></td>
+            <td class="bg-green-cart">Total</td>
+            <td class="bg-green-cart"></td>
+            <td class="bg-green-cart"></td>
+            <td class="bg-green-cart"></td>
+            <td class="bg-green-cart">{{config('cart.currency')}} <span id="total" data-total="{{ $total }}">{{ $total }}</span></td>
         </tr>
         </tfoot>
         <tbody>

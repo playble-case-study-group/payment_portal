@@ -20,8 +20,9 @@
                                 @include('front.products.product-list-table', compact('products'))
                             </div>
                         </div>
+                    <br><br>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <table class="table table-striped">
                                     <thead>
                                         <th>Alias</th>
@@ -85,7 +86,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="col-md-6">
+                            <?php /*<div class="col-md-6">
                                 @if(!$couriers->isEmpty())
                                     <table class="table table-striped">
                                         <thead>
@@ -115,8 +116,9 @@
                                 @else
                                     <p class="alert alert-danger">No courier set</p>
                                 @endif
-                            </div>
+                            </div> */?>
                         </div>
+                    <br><br>
                         <div class="row">
                             <div class="col-md-12">
                                 @if(isset($payments) && !empty($payments))
