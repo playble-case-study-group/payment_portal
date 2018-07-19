@@ -19,7 +19,7 @@
                     <input type="hidden" name="stripeToken" value="">
                     <input type="hidden" class="address_id" name="billing_address" value="">
                     <input type="hidden" class="delivery_address_id" name="delivery_address" value="">
-                    <input type="hidden" class="courier_id" name="courier" value="">
+                    <input type="hidden" class="courier_id" name="courier" value="1">
                     {{ csrf_field() }}
                     <button id="paywithstripe" class="btn btn-primary">Pay with Stripe <i class="fa fa-cc-stripe"></i></button>
                 </form>
@@ -46,7 +46,7 @@
                 <input type="hidden" name="payment" value="{{ config('paypal.name') }}">
                 <input type="hidden" class="address_id" name="billing_address" value="">
                 <input type="hidden" class="delivery_address_id" name="delivery_address" value="">
-                <input type="hidden" class="courier_id" name="courier" value="">
+                <input type="hidden" class="courier_id" name="courier" value="1">
                 <input type="hidden" id="shippingFeeC" value="0">
                 <button type="submit" class="btn btn-success pull-right">Pay with PayPal <i class="fa fa-paypal"></i></button>
             </form>

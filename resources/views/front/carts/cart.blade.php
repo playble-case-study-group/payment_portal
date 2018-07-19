@@ -120,6 +120,8 @@
             @endif
         </div>
 @endsection
+
+
 @section('css')
     <style type="text/css">
         .product-description {
