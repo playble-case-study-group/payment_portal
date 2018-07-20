@@ -12,6 +12,8 @@ trait CustomerTransformable
         $prop->id = (int) $customer->id;
         $prop->name = $customer->name;
         $prop->email = $customer->email;
+        $prop->registered_as = $customer->registered_as;
+        $prop->email = $customer->email;
         $prop->status = (int) $customer->status;
 
         return $prop;

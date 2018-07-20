@@ -14,19 +14,22 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <td class="col-md-2">ID</td>
+                                <td class="col-md-1">ID</td>
                                 <td class="col-md-2">Name</td>
                                 <td class="col-md-2">Email</td>
-                                <td class="col-md-2">Status</td>
+                                <td class="col-md-2">Registration</td>
+                                <td class="col-md-1">Status</td>
                                 <td class="col-md-4">Actions</td>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach ($customers as $customer)
+                            {{ $customer }}
                             <tr>
                                 <td>{{ $customer['id'] }}</td>
                                 <td>{{ $customer['name'] }}</td>
                                 <td>{{ $customer['email'] }}</td>
+                                <td>{{ $customer['registered_as'] }}</td>
                                 <td>@include('layouts.status', ['status' => $customer['status']])</td>
                                 <td>
                                     <form action="{{ route('admin.customers.destroy', $customer['id']) }}" method="post" class="form-horizontal">

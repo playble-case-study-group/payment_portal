@@ -3,6 +3,7 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
+         {{ $customer }}
         @include('layouts.errors-and-messages')
         <div class="box">
             <form action="{{ route('admin.customers.update', $customer->id) }}" method="post" class="form">
@@ -24,6 +25,51 @@
                         <label for="password">Password <span class="text-danger">*</span></label>
                         <input type="password" name="password" id="password" placeholder="xxxxx" class="form-control">
                     </div>
+
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input @if($customer->registered_as == "student") checked="checked" @endif onclick="role('student')" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" value="student" for="customRadioInline1">Student</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input @if($customer->registered_as == "teacher") checked="checked" @endif onclick="role('teacher')" type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                        <label class="custom-control-label" value="teacher" for="customRadioInline2">Teacher</label>
+                    </div>
+                    <br>
+
+                    @if($customer->registered_as == "teacher" )
+                        <div id="teacher-form">
+                            <div class="form-group">
+                                <label for="position">Position <span class="text-danger">*</span></label>
+                                <input type="text" name="position" id="position" placeholder="Position" class="form-control" value="{!! $customer->position ?: old('position')  !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="work-email">Work Email <span class="text-danger">*</span></label>
+                                <input type="text" name="work_email" id="work-email" placeholder="Work Email" class="form-control" value="{!! $customer->work_email ?: old('work_email')  !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="institution">Institution <span class="text-danger">*</span></label>
+                                <input type="text" name="institution" id="institution" placeholder="Institution" class="form-control" value="{!! $customer->institution ?: old('institution')  !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="department">Department <span class="text-danger">*</span></label>
+                                <input type="text" name="department" id="department" placeholder="Department" class="form-control" value="{!! $customer->department ?: old('department')  !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="chair-name">Dept. Chair Name <span class="text-danger">*</span></label>
+                                <input type="text" name="chair_name" id="chair_name" placeholder="Chair Name" class="form-control" value="{!! $customer->chair_name ?: old('chair_name')  !!}">
+                            </div>
+                            <div class="form-group">
+                                <label for="chair-phone">Dept. Chair Phone <span class="text-danger">*</span></label>
+                                <input type="text" name="chair_phone" id="chair-phone" placeholder="Chair Phone" class="form-control" value="{!! $customer->chair_phone ?: old('chair_phone')  !!}">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="chair-email">Dept. Chair Email <span class="text-danger">*</span></label>
+                                <input type="text" name="chair_email" id="chair-email" placeholder="Chair Email" class="form-control" value="{!! $customer->chair_email ?: old('chair_email')  !!}">
+                            </div>
+                        </div>
+                    @endif
+
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">
@@ -45,4 +91,15 @@
 
     </section>
     <!-- /.content -->
+@endsection
+@section('js')
+    <script type="text/javascript">
+        function role(role) {
+            if (role !== 'student') {
+                $('#teacher-form').show();
+            } else {
+                $('#teacher-form').hide();
+            }
+        }
+    </script>
 @endsection
