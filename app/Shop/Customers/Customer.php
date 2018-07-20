@@ -25,6 +25,7 @@ class Customer extends Authenticatable
         'password',
         'status',
         'registered_as',
+        'approved',
         'first_name',
         'last_name',
         'position',

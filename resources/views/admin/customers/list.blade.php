@@ -24,7 +24,6 @@
                         </thead>
                         <tbody>
                         @foreach ($customers as $customer)
-                            {{ $customer }}
                             <tr>
                                 <td>{{ $customer['id'] }}</td>
                                 <td>{{ $customer['name'] }}</td>

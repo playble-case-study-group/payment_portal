@@ -3,7 +3,6 @@
 @section('content')
     <!-- Main content -->
     <section class="content">
-         {{ $customer }}
         @include('layouts.errors-and-messages')
         <div class="box">
             <form action="{{ route('admin.customers.update', $customer->id) }}" method="post" class="form">
@@ -27,16 +26,23 @@
                     </div>
 
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input @if($customer->registered_as == "student") checked="checked" @endif onclick="role('student')" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                        <input @if($customer->registered_as == "student") checked="checked" @endif onclick="role('student')" type="radio" id="t" name="registered_as" value="teacher" class="custom-control-input">
                         <label class="custom-control-label" value="student" for="customRadioInline1">Student</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input @if($customer->registered_as == "teacher") checked="checked" @endif onclick="role('teacher')" type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                        <input @if($customer->registered_as == "teacher") checked="checked" @endif onclick="role('teacher')" type="radio" id="customRadioInline2" name="registered_as" value="teacher" class="custom-control-input">
                         <label class="custom-control-label" value="teacher" for="customRadioInline2">Teacher</label>
                     </div>
                     <br>
 
                     @if($customer->registered_as == "teacher" )
+                        <div class="form-group">
+                            <label for="approved">Status </label>
+                            <select name="approved" id="approved" class="form-control">
+                                <option value="1" @if($customer->approved == 1) selected="selected" @endif>Approved</option>
+                                <option value="0" @if($customer->approved == 0) selected="selected" @endif>Unapproved</option>
+                            </select>
+                        </div>
                         <div id="teacher-form">
                             <div class="form-group">
                                 <label for="position">Position <span class="text-danger">*</span></label>
@@ -99,6 +105,17 @@
                 $('#teacher-form').show();
             } else {
                 $('#teacher-form').hide();
+            }
+        }
+
+        function toggle(){
+            var temp = $('#approved').val();
+            if(temp == 1 ){
+                $('#approved').val(0);
+                $('#approved').attr('checked', false);
+            } else {
+                $('#approved').val(1);
+                $('#approved').removeAttr('checked');
             }
         }
     </script>
