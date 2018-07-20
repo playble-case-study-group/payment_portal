@@ -129,6 +129,9 @@ ul.navbar-nav > li.active > a {
 .bg-green-cart {
     background-color: #dff0d8;
 }
+.hidden {
+    display: none;
+}
 
 
 

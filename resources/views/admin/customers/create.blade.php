@@ -23,6 +23,55 @@
                         <label for="password">Password <span class="text-danger">*</span></label>
                         <input type="password" name="password" id="password" placeholder="xxxxx" class="form-control">
                     </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input onclick="role('student')" type="radio" id="t" name="registered_as" value="teacher" class="custom-control-input">
+                        <label class="custom-control-label" value="student" for="customRadioInline1">Student</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input onclick="role('teacher')" type="radio" id="customRadioInline2" name="registered_as" value="teacher" class="custom-control-input">
+                        <label class="custom-control-label" value="teacher" for="customRadioInline2">Teacher</label>
+                    </div>
+                    <br>
+
+                    <div id="teacher-form" style="display: none;">
+                        <div class="form-group">
+                            <label for="approved">Status </label>
+                            <select name="approved" id="approved" class="form-control">
+                                <option value="1" >Approved</option>
+                                <option value="0" >Unapproved</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position <span class="text-danger">*</span></label>
+                            <input type="text" name="position" id="position" placeholder="Position" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="work-email">Work Email <span class="text-danger">*</span></label>
+                            <input type="text" name="work_email" id="work-email" placeholder="Work Email" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="institution">Institution <span class="text-danger">*</span></label>
+                            <input type="text" name="institution" id="institution" placeholder="Institution" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department <span class="text-danger">*</span></label>
+                            <input type="text" name="department" id="department" placeholder="Department" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="chair-name">Dept. Chair Name <span class="text-danger">*</span></label>
+                            <input type="text" name="chair_name" id="chair_name" placeholder="Chair Name" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="chair-phone">Dept. Chair Phone <span class="text-danger">*</span></label>
+                            <input type="text" name="chair_phone" id="chair-phone" placeholder="Chair Phone" class="form-control" value="">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="chair-email">Dept. Chair Email <span class="text-danger">*</span></label>
+                            <input type="text" name="chair_email" id="chair-email" placeholder="Chair Email" class="form-control" value="">
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">
@@ -44,4 +93,15 @@
 
     </section>
     <!-- /.content -->
+@endsection
+@section('js')
+    <script type="text/javascript">
+        function role(role) {
+            if (role !== 'student') {
+                $('#teacher-form').show();
+            } else {
+                $('#teacher-form').hide();
+            }
+        }
+    </script>
 @endsection

@@ -43,6 +43,7 @@
                                 <option value="0" @if($customer->approved == 0) selected="selected" @endif>Unapproved</option>
                             </select>
                         </div>
+
                         <div id="teacher-form">
                             <div class="form-group">
                                 <label for="position">Position <span class="text-danger">*</span></label>
